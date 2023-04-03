@@ -1,0 +1,12 @@
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\bin\Debug\Disk Scheduling Algorithms.exe.config
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\bin\Debug\Disk Scheduling Algorithms.exe
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\bin\Debug\Disk Scheduling Algorithms.pdb
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\bin\Debug\Disk Scheduling Algorithms.xml
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.vbproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk_Scheduling_Algorithms.Resources.resources
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.vbproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.vbproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.exe
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.xml
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.pdb
+C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk_Scheduling_Algorithms.Main.resources
