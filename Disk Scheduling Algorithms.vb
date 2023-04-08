@@ -14,9 +14,10 @@
 		'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
 		Dim SRTF As New SRTF
 		Dim SPF As New SPF
+		Dim FIFO As New FIFO
 
-		SPF.Execute()
-
+		FIFO.Execute()
+		'SPF.Execute()
 		'SRTF.Execute()
 	End Sub
 

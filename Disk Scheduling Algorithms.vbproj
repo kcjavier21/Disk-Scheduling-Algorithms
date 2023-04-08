@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FIFO.vb" />
     <Compile Include="Process.vb" />
     <Compile Include="Disk Scheduling Algorithms.vb">
       <SubType>Form</SubType>
