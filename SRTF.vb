@@ -90,11 +90,7 @@
 					totalIdleTime += Processes(idx).StartTime - prev
 				End If
 
-				'ReDim Preserve processWalkthrough(currentTime)
 				processWalkthrough.Add(Processes(idx).Id)
-
-				'result += "P-" & processWalkthrough(currentTime).ToString & "     "
-				'timePassed += "C-" & currentTime.ToString() & "     "
 
 				burstRemaining(idx) -= 1
 				currentTime += 1
@@ -180,6 +176,12 @@
 			prevProcessId = processWalkthrough(i)
 		Next
 
+		avgTurnAroundTime = totalTurnAroundTime / numOfProcesses
+		avgWaitingTime = totalWaitingTime / numOfProcesses
+
 		Main.RichTextBox2.Text = eventLog
+
+		Main.LabelAvgWaitingTime.Text = Math.Round(avgWaitingTime, 2) & " ms"
+		Main.LabelAvgTurnaroundTime.Text = Math.Round(avgTurnAroundTime, 2) & " ms"
 	End Sub
 End Class

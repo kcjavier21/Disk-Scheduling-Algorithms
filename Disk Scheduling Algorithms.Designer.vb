@@ -50,13 +50,17 @@ Partial Class Main
 		Me.Label9 = New System.Windows.Forms.Label()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.Label11 = New System.Windows.Forms.Label()
+		Me.Label12 = New System.Windows.Forms.Label()
+		Me.LabelAvgWaitingTime = New System.Windows.Forms.Label()
+		Me.Label13 = New System.Windows.Forms.Label()
+		Me.LabelAvgTurnaroundTime = New System.Windows.Forms.Label()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'TbAtProcessA
 		'
 		Me.TbAtProcessA.Location = New System.Drawing.Point(305, 88)
-		Me.TbAtProcessA.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbAtProcessA.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbAtProcessA.Name = "TbAtProcessA"
 		Me.TbAtProcessA.Size = New System.Drawing.Size(76, 20)
 		Me.TbAtProcessA.TabIndex = 0
@@ -64,7 +68,7 @@ Partial Class Main
 		'TbCbProcessA
 		'
 		Me.TbCbProcessA.Location = New System.Drawing.Point(397, 88)
-		Me.TbCbProcessA.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbCbProcessA.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbCbProcessA.Name = "TbCbProcessA"
 		Me.TbCbProcessA.Size = New System.Drawing.Size(76, 20)
 		Me.TbCbProcessA.TabIndex = 1
@@ -72,7 +76,7 @@ Partial Class Main
 		'TbAtProcessB
 		'
 		Me.TbAtProcessB.Location = New System.Drawing.Point(305, 111)
-		Me.TbAtProcessB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbAtProcessB.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbAtProcessB.Name = "TbAtProcessB"
 		Me.TbAtProcessB.Size = New System.Drawing.Size(76, 20)
 		Me.TbAtProcessB.TabIndex = 2
@@ -80,7 +84,7 @@ Partial Class Main
 		'TbCbProcessB
 		'
 		Me.TbCbProcessB.Location = New System.Drawing.Point(397, 111)
-		Me.TbCbProcessB.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbCbProcessB.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbCbProcessB.Name = "TbCbProcessB"
 		Me.TbCbProcessB.Size = New System.Drawing.Size(76, 20)
 		Me.TbCbProcessB.TabIndex = 3
@@ -88,7 +92,7 @@ Partial Class Main
 		'TbAtProcessC
 		'
 		Me.TbAtProcessC.Location = New System.Drawing.Point(305, 134)
-		Me.TbAtProcessC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbAtProcessC.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbAtProcessC.Name = "TbAtProcessC"
 		Me.TbAtProcessC.Size = New System.Drawing.Size(76, 20)
 		Me.TbAtProcessC.TabIndex = 4
@@ -96,7 +100,7 @@ Partial Class Main
 		'TbCbProcessC
 		'
 		Me.TbCbProcessC.Location = New System.Drawing.Point(397, 134)
-		Me.TbCbProcessC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbCbProcessC.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbCbProcessC.Name = "TbCbProcessC"
 		Me.TbCbProcessC.Size = New System.Drawing.Size(76, 20)
 		Me.TbCbProcessC.TabIndex = 5
@@ -104,7 +108,7 @@ Partial Class Main
 		'TbAtProcessD
 		'
 		Me.TbAtProcessD.Location = New System.Drawing.Point(305, 159)
-		Me.TbAtProcessD.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbAtProcessD.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbAtProcessD.Name = "TbAtProcessD"
 		Me.TbAtProcessD.Size = New System.Drawing.Size(76, 20)
 		Me.TbAtProcessD.TabIndex = 6
@@ -112,7 +116,7 @@ Partial Class Main
 		'TbCbProcessD
 		'
 		Me.TbCbProcessD.Location = New System.Drawing.Point(397, 159)
-		Me.TbCbProcessD.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbCbProcessD.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbCbProcessD.Name = "TbCbProcessD"
 		Me.TbCbProcessD.Size = New System.Drawing.Size(76, 20)
 		Me.TbCbProcessD.TabIndex = 7
@@ -120,7 +124,7 @@ Partial Class Main
 		'TbAtProcessE
 		'
 		Me.TbAtProcessE.Location = New System.Drawing.Point(305, 182)
-		Me.TbAtProcessE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbAtProcessE.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbAtProcessE.Name = "TbAtProcessE"
 		Me.TbAtProcessE.Size = New System.Drawing.Size(76, 20)
 		Me.TbAtProcessE.TabIndex = 8
@@ -128,7 +132,7 @@ Partial Class Main
 		'TbCbProcessE
 		'
 		Me.TbCbProcessE.Location = New System.Drawing.Point(397, 182)
-		Me.TbCbProcessE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.TbCbProcessE.Margin = New System.Windows.Forms.Padding(2)
 		Me.TbCbProcessE.Name = "TbCbProcessE"
 		Me.TbCbProcessE.Size = New System.Drawing.Size(76, 20)
 		Me.TbCbProcessE.TabIndex = 9
@@ -206,7 +210,7 @@ Partial Class Main
 		'BtnExecute
 		'
 		Me.BtnExecute.Location = New System.Drawing.Point(538, 143)
-		Me.BtnExecute.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.BtnExecute.Margin = New System.Windows.Forms.Padding(2)
 		Me.BtnExecute.Name = "BtnExecute"
 		Me.BtnExecute.Size = New System.Drawing.Size(56, 28)
 		Me.BtnExecute.TabIndex = 17
@@ -217,7 +221,7 @@ Partial Class Main
 		'
 		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.DataGridView1.Location = New System.Drawing.Point(76, 253)
-		Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
 		Me.DataGridView1.Name = "DataGridView1"
 		Me.DataGridView1.RowHeadersVisible = False
 		Me.DataGridView1.RowHeadersWidth = 51
@@ -228,7 +232,7 @@ Partial Class Main
 		'RichTextBox2
 		'
 		Me.RichTextBox2.Location = New System.Drawing.Point(76, 357)
-		Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(2)
 		Me.RichTextBox2.Name = "RichTextBox2"
 		Me.RichTextBox2.Size = New System.Drawing.Size(305, 197)
 		Me.RichTextBox2.TabIndex = 22
@@ -317,11 +321,55 @@ Partial Class Main
 		Me.Label11.TabIndex = 30
 		Me.Label11.Text = "Event Log"
 		'
+		'Label12
+		'
+		Me.Label12.AutoSize = True
+		Me.Label12.Location = New System.Drawing.Point(447, 370)
+		Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label12.Name = "Label12"
+		Me.Label12.Size = New System.Drawing.Size(115, 13)
+		Me.Label12.TabIndex = 31
+		Me.Label12.Text = "Average Waiting Time:"
+		'
+		'LabelAvgWaitingTime
+		'
+		Me.LabelAvgWaitingTime.AutoSize = True
+		Me.LabelAvgWaitingTime.Location = New System.Drawing.Point(601, 370)
+		Me.LabelAvgWaitingTime.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.LabelAvgWaitingTime.Name = "LabelAvgWaitingTime"
+		Me.LabelAvgWaitingTime.Size = New System.Drawing.Size(13, 13)
+		Me.LabelAvgWaitingTime.TabIndex = 32
+		Me.LabelAvgWaitingTime.Text = "0"
+		'
+		'Label13
+		'
+		Me.Label13.AutoSize = True
+		Me.Label13.Location = New System.Drawing.Point(447, 408)
+		Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.Label13.Name = "Label13"
+		Me.Label13.Size = New System.Drawing.Size(134, 13)
+		Me.Label13.TabIndex = 33
+		Me.Label13.Text = "Average Turnaround Time:"
+		'
+		'LabelAvgTurnaroundTime
+		'
+		Me.LabelAvgTurnaroundTime.AutoSize = True
+		Me.LabelAvgTurnaroundTime.Location = New System.Drawing.Point(601, 408)
+		Me.LabelAvgTurnaroundTime.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+		Me.LabelAvgTurnaroundTime.Name = "LabelAvgTurnaroundTime"
+		Me.LabelAvgTurnaroundTime.Size = New System.Drawing.Size(13, 13)
+		Me.LabelAvgTurnaroundTime.TabIndex = 34
+		Me.LabelAvgTurnaroundTime.Text = "0"
+		'
 		'Main
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(747, 574)
+		Me.Controls.Add(Me.LabelAvgTurnaroundTime)
+		Me.Controls.Add(Me.Label13)
+		Me.Controls.Add(Me.LabelAvgWaitingTime)
+		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.Label11)
 		Me.Controls.Add(Me.Label10)
 		Me.Controls.Add(Me.Label9)
@@ -350,7 +398,7 @@ Partial Class Main
 		Me.Controls.Add(Me.TbAtProcessB)
 		Me.Controls.Add(Me.TbCbProcessA)
 		Me.Controls.Add(Me.TbAtProcessA)
-		Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+		Me.Margin = New System.Windows.Forms.Padding(2)
 		Me.Name = "Main"
 		Me.Text = "Disk Scheduling Algorithms"
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -387,4 +435,8 @@ Partial Class Main
 	Friend WithEvents Label9 As Label
 	Friend WithEvents Label10 As Label
 	Friend WithEvents Label11 As Label
+	Friend WithEvents Label12 As Label
+	Friend WithEvents LabelAvgWaitingTime As Label
+	Friend WithEvents Label13 As Label
+	Friend WithEvents LabelAvgTurnaroundTime As Label
 End Class

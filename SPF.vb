@@ -5,18 +5,17 @@
         Dim processing As Process
         Dim Utils As New Utils
 
-        Dim result As String = ""
-
         Dim currentTime As Integer = 0
         Dim done As Boolean = False
         Dim index As Integer
 
-        Dim processWalkthrough = New ArrayList
+        Dim totalTurnAroundTime As Integer = 0
+        Dim totalWaitingTime As Integer = 0
 
-        'arrivalProc.Add(New Process("A", 3, 1))
-        'arrivalProc.Add(New Process("B", 4, 2))
-        'arrivalProc.Add(New Process("C", 2, 1))
-        'arrivalProc.Add(New Process("D", 4, 4))
+        Dim avgTurnAroundTime As Double = 0
+        Dim avgWaitingTime As Double = 0
+
+        Dim processWalkthrough = New ArrayList
 
         Dim processIds() As String = {"A", "B", "C", "D", "E"}
         Dim TbAtProcesses() As TextBox = {Main.TbAtProcessA, Main.TbAtProcessB, Main.TbAtProcessC, Main.TbAtProcessD, Main.TbAtProcessE}
@@ -118,6 +117,9 @@
                                 processing.StartTime = currentTime
                                 processing.TurnAroundTime = processing.BurstTime + processing.WaitingTime
 
+                                totalTurnAroundTime += processing.TurnAroundTime
+                                totalWaitingTime += processing.WaitingTime
+
                                 prevProcessId = processing.Id
                                 Exit For
                             End If
@@ -173,7 +175,13 @@
             currentTime += 1
         End While
 
+        avgTurnAroundTime = totalTurnAroundTime / numOfProcesses
+        avgWaitingTime = totalWaitingTime / numOfProcesses
+
         Main.RichTextBox2.Text = eventLog
+
+        Main.LabelAvgWaitingTime.Text = Math.Round(avgWaitingTime, 2) & " ms"
+        Main.LabelAvgTurnaroundTime.Text = Math.Round(avgTurnAroundTime, 2) & " ms"
 
         Utils.VisualizeProcessWalkthrough(processWalkthrough)
     End Sub
