@@ -56,8 +56,9 @@
         Next
 
         Dim prevProcessId As String = ""
+        Dim evnt As String = ""
         Dim eventLog As String = ""
-        Dim eventLogs As String = ""
+
 
         Dim arrivedFlag As Boolean = False
         Dim finishedFlag As Boolean = False
@@ -71,7 +72,7 @@
                 If (arrivalProc(i).ArrivalTime <= currentTime) And Not (queueProc.Contains(arrivalProc(i))) Then
                     'arrivedFlag = True
                     'Debug.WriteLine(currentTime.ToString & ": Process " & arrivalProc(i).Id & " has arrived.")
-                    eventLog = currentTime.ToString & ": Process " & arrivalProc(i).Id & " has arrived."
+                    evnt = currentTime.ToString & ": Process " & arrivalProc(i).Id & " has arrived."
                     queueProc.Add(arrivalProc(i))
                 End If
             Next
@@ -105,11 +106,11 @@
                                 startedFlag = True
 
                                 If processing.ArrivalTime = currentTime Then
-                                    eventLog = currentTime.ToString & ": Process " & processing.Id & " arrived and started."
+                                    evnt = currentTime.ToString & ": Process " & processing.Id & " arrived and started."
                                 ElseIf prevProcessId <> processing.Id Then
-                                    eventLog = currentTime.ToString & ": Process " & prevProcessId & " finished." & " Process " & processing.Id & " started."
+                                    evnt = currentTime.ToString & ": Process " & prevProcessId & " done." & " Process " & processing.Id & " started."
                                 Else
-                                    eventLog = currentTime.ToString & ": Process " & processing.Id & " started."
+                                    evnt = currentTime.ToString & ": Process " & processing.Id & " started."
                                 End If
 
                                 processWalkthrough.Add(processing.Id)
@@ -125,7 +126,7 @@
                     ElseIf (processing.BurstTime <= 0) And (proc.Id = processing.Id) Then
                         'Debug.WriteLine("Process ID (" & processing.Id & ") has finished processing")
                         finishedFlag = True
-                        eventLog = currentTime.ToString & ": Process " & processing.Id & " finished."
+                        evnt = currentTime.ToString & ": Process " & processing.Id & " done."
 
                         processWalkthrough.Add(processing.Id)
 
@@ -158,54 +159,22 @@
 
             If startedFlag = False Then
                 If finishedFlag = False Then
-                    eventLog = currentTime.ToString & ": Process " & prevProcessId & " running."
+                    evnt = currentTime.ToString & ": Process " & prevProcessId & " running."
                     processWalkthrough.Add(processing.Id)
                 End If
             End If
 
-            eventLogs += eventLog & vbCrLf
+            eventLog += evnt & vbCrLf
 
-            eventLog = ""
+            evnt = ""
             finishedFlag = False
             startedFlag = False
 
             currentTime += 1
         End While
 
-        eventLogs += currentTime.ToString & ": All processes done!"
+        Main.RichTextBox2.Text = eventLog
 
-        prevProcessId = ""
-
-        Dim columnWidth As Integer = 0
-        Dim count = 0
-
-        For i = 0 To (processWalkthrough.Count - 1)
-            result += processWalkthrough(i).ToString & ", "
-            Console.WriteLine(result)
-
-            If processWalkthrough(i) = prevProcessId Then
-                columnWidth += 25
-
-                If i = (processWalkthrough.Count - 1) Then
-                    Utils.AddProcessIdColumn(processWalkthrough(i), count, columnWidth)
-                    Utils.AddColoredRows(processWalkthrough(i), count)
-                End If
-
-            ElseIf processWalkthrough(i) <> prevProcessId Then
-                Utils.AddProcessIdColumn(prevProcessId, count, columnWidth)
-                Utils.AddColoredRows(prevProcessId, count)
-
-                columnWidth = 0
-                count += 1
-            End If
-            prevProcessId = processWalkthrough(i)
-        Next
-
-        Main.RichTextBox2.Text = eventLogs
-
-        Debug.WriteLine("Final Summary:")
-        For Each proc In queueProc
-            Debug.WriteLine("ID: " & proc.Id & ", BT: " & proc.BurstTime & ", AT: " & proc.ArrivalTime & ", ST:" & proc.StartTime & ", CT:" & proc.CompletionTime & ", TAT:" & proc.TurnAroundTime & ", WT:" & proc.WaitingTime & ", RT:" & proc.ResponseTime)
-        Next
+        Utils.VisualizeProcessWalkthrough(processWalkthrough)
     End Sub
 End Class

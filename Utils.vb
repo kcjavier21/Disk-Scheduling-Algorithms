@@ -51,4 +51,32 @@
 
 		Return False
 	End Function
+
+	Public Sub VisualizeProcessWalkthrough(ByVal processWalkthrough As ArrayList)
+		Dim columnWidth As Integer = 0
+		Dim count As Integer = 0
+		Dim prevProcessId As String = ""
+
+		Main.DataGridView1.Columns.Clear()
+		Main.DataGridView1.Rows.Clear()
+
+		For i = 0 To (processWalkthrough.Count - 1)
+			If processWalkthrough(i) = prevProcessId Then
+				columnWidth += 25
+
+				If i = (processWalkthrough.Count - 1) Then
+					AddProcessIdColumn(processWalkthrough(i), count, columnWidth)
+					AddColoredRows(processWalkthrough(i), count)
+				End If
+
+			ElseIf processWalkthrough(i) <> prevProcessId Then
+				AddProcessIdColumn(prevProcessId, count, columnWidth)
+				AddColoredRows(prevProcessId, count)
+
+				columnWidth = 0
+				count += 1
+			End If
+			prevProcessId = processWalkthrough(i)
+		Next
+	End Sub
 End Class

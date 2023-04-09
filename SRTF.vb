@@ -102,6 +102,10 @@
 
 
 				If burstRemaining(idx) = 0 Then
+					If completedProcesses = (numOfProcesses - 1) Then
+						processWalkthrough.Add(Processes(idx).Id)
+					End If
+
 					Processes(idx).CompletionTime = currentTime
 					Processes(idx).TurnAroundTime = Processes(idx).CompletionTime - Processes(idx).ArrivalTime
 					Processes(idx).WaitingTime = Processes(idx).TurnAroundTime - Processes(idx).BurstTime
@@ -117,6 +121,8 @@
 			Else
 				currentTime += 1
 			End If
+
+
 		End While
 
 		Dim minArrivalTime As Integer = 10000000
@@ -138,18 +144,17 @@
 		Dim count = 0
 		Dim eventLog As String = ""
 
+		Main.DataGridView1.Columns.Clear()
+		Main.DataGridView1.Rows.Clear()
+
 		For i = 0 To (processWalkthrough.Count - 1)
-			result += processWalkthrough(i).ToString & ", "
-			Console.WriteLine(result)
-
-
 			If processWalkthrough(i) = prevProcessId Then
 				columnWidth += 25
 
 				If i = (processWalkthrough.Count - 1) Then
 					Utils.AddProcessIdColumn(processWalkthrough(i), count, columnWidth)
 					Utils.AddColoredRows(processWalkthrough(i), count)
-					eventLog += i.ToString & ": Process " & processWalkthrough(i) & " finished." & vbCrLf
+					eventLog += i.ToString & ": Process " & processWalkthrough(i) & " done." & vbCrLf
 				Else
 					eventLog += i.ToString & ": Process " & processWalkthrough(i) & " running." & vbCrLf
 				End If
@@ -160,7 +165,7 @@
 
 				If i <> 0 Then
 					If processWalkthrough.LastIndexOf(prevProcessId) <= i Then
-						eventLog += i.ToString & ": Process " & prevProcessId & " finished. " & " Process " & processWalkthrough(i) & " started" & vbCrLf
+						eventLog += i.ToString & ": Process " & prevProcessId & " done. " & " Process " & processWalkthrough(i) & " started" & vbCrLf
 					Else
 						eventLog += i.ToString & ": Process " & prevProcessId & " preempted. " & " Process " & processWalkthrough(i) & " started" & vbCrLf
 					End If
@@ -175,7 +180,6 @@
 			prevProcessId = processWalkthrough(i)
 		Next
 
-		eventLog += processWalkthrough.Count.ToString & ": All processes done."
 		Main.RichTextBox2.Text = eventLog
 	End Sub
 End Class

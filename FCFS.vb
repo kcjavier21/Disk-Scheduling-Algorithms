@@ -1,16 +1,11 @@
-﻿Public Class FIFO
-	Public Sub Execute()
+﻿Public Class FCFS
+    Public Sub Execute()
         Dim Index As Integer
         Dim Add As Integer
         Dim ProcList As New List(Of Process)()
-
         Dim Utils As New Utils
 
-        'ProcList.Add(New Process("A", 0, 8))
-        'ProcList.Add(New Process("B", 3, 4))
-        'ProcList.Add(New Process("C", 4, 5))
-        'ProcList.Add(New Process("D", 6, 3))
-        'ProcList.Add(New Process("E", 10, 2))
+        Dim processWalkthrough = New ArrayList
 
         Dim processIds() As String = {"A", "B", "C", "D", "E"}
         Dim TbAtProcesses() As TextBox = {Main.TbAtProcessA, Main.TbAtProcessB, Main.TbAtProcessC, Main.TbAtProcessD, Main.TbAtProcessE}
@@ -41,7 +36,6 @@
             ProcList(i).Id = processIds(i)
             ProcList(i).ArrivalTime = Val(TbAtProcesses(i).Text)
             ProcList(i).BurstTime = Val(TbCbProcesses(i).Text)
-            'burstRemaining(i) = Processes(i).BurstTime
         Next
 
         'Sort the ProcList from the smallest arrival time
@@ -58,11 +52,34 @@
             ProcList(Index) = temp
         Next
 
-        For Ctr1 = 0 To (ProcList.Count - 1)
-            For Ctr2 = 0 To (ProcList(Ctr1).BurstTime - 1)
-                Console.WriteLine(ProcList(Ctr1).Id)
-                'RichTextBox1.Text = RichTextBox1.Text & " " & ProcList(Ctr1).Id
+        Dim prevProcessId As String = ""
+        Dim eventLog = ""
+        Dim currentTime As Integer = 0
+
+        'Create event log
+        For i = 0 To (ProcList.Count - 1)
+            For j = 0 To (ProcList(i).BurstTime - 1)
+                If ProcList(i).Id <> prevProcessId Then
+                    If prevProcessId = "" Then
+                        eventLog += currentTime.ToString + ": Process " & ProcList(i).Id & " started." & vbCrLf
+                    Else
+                        eventLog += currentTime.ToString + ": Process " & prevProcessId & " done. Process " & ProcList(i).Id & " started" & vbCrLf
+                    End If
+                Else
+                    eventLog += currentTime.ToString + ": Process " & ProcList(i).Id & " running." & vbCrLf
+                End If
+
+                processWalkthrough.Add(ProcList(i).Id)
+
+                currentTime += 1
+                prevProcessId = ProcList(i).Id
             Next
         Next
+
+        eventLog += currentTime.ToString + ": Process " & prevProcessId & " done."
+        Main.RichTextBox2.Text = eventLog
+
+
+        Utils.VisualizeProcessWalkthrough(processWalkthrough)
     End Sub
 End Class
