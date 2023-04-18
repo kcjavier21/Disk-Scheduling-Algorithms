@@ -22,5 +22,35 @@ Disk Scheduling Algorithms
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Disk_Scheduling_Algorithms.My.Resources.Resources.button">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Disk_Scheduling_Algorithms.My.Resources.Resources.mc_bg">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Disk_Scheduling_Algorithms.My.Resources.Resources.MinecraftBold_nMK1">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:Disk_Scheduling_Algorithms.My.Resources.Resources.MinecraftBoldItalic_1y1e">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:Disk_Scheduling_Algorithms.My.Resources.Resources.MinecraftItalic_R8Mo">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:Disk_Scheduling_Algorithms.My.Resources.Resources.MinecraftRegular_Bmg3">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
 </members>
 </doc>

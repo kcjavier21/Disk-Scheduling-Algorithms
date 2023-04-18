@@ -123,6 +123,19 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Resources\MinecraftBold-nMK1.otf" />
+    <None Include="Resources\MinecraftBoldItalic-1y1e.otf" />
+    <None Include="Resources\MinecraftItalic-R8Mo.otf" />
+    <None Include="Resources\MinecraftRegular-Bmg3.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mc_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
