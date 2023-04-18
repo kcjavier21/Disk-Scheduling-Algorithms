@@ -10,3 +10,15 @@ C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling 
 C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.xml
 C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk Scheduling Algorithms.pdb
 C:\Users\ASUS\source\repos\Disk Scheduling Algorithms\obj\Debug\Disk_Scheduling_Algorithms.Main.resources
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\bin\Debug\Disk Scheduling Algorithms.exe.config
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\bin\Debug\Disk Scheduling Algorithms.exe
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\bin\Debug\Disk Scheduling Algorithms.pdb
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\bin\Debug\Disk Scheduling Algorithms.xml
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk Scheduling Algorithms.vbproj.AssemblyReference.cache
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk_Scheduling_Algorithms.Main.resources
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk_Scheduling_Algorithms.Resources.resources
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk Scheduling Algorithms.vbproj.GenerateResource.cache
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk Scheduling Algorithms.vbproj.CoreCompileInputs.cache
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk Scheduling Algorithms.exe
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk Scheduling Algorithms.xml
+E:\Work\Github Repos\Disk-Scheduling-Algorithms\obj\Debug\Disk Scheduling Algorithms.pdb
